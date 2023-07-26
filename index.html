@@ -13,6 +13,7 @@
 </head>
 <body>
     <h1>Đoán số may mắn</h1>
+    <p id="counts">Số lượt chơi: 5</p>
     <p> Nhập số dự đoán: </p>
     <input type="number"    id="guessNumber"><br>
     <button onclick="checkNumber()">Đoán</button>
@@ -33,6 +34,7 @@
             } 
 
             count--;
+            document.getElementById('counts').textContent = "Số lượt chơi: " + count;
 
             if (guess != luckyNumber){
                 alert('Bạn đã đoán sai')
@@ -46,7 +48,7 @@
         }
 
         function restartGame(){
-            count = 5;
+            count = document.getElementById('counts').value;
             luckyNumber = Math.floor(Math.random() * 100) + 1;
             document.getElementById("guessNumber").value = "";
         }
@@ -54,6 +56,8 @@
         document.getElementById("btnRestart").addEventListener("click", function() {
             alert('Chơi lại game !');
             restartGame(); 
+            count = 5;
+            document.getElementById('counts').textContent = 'Số lượt chơi: ' + count;
         });
 
     </script>
