@@ -39,8 +39,12 @@
             if (count == 0){
                 alert('Bạn đã hết lượt');
                 document.getElementById('header').textContent = 'Bạn đã thua. Số may mắn là: ' + luckyNumber;
+            } else if (count < 0){
+                alert('Bạn đã hết lượt');
+                count = 0;
+                document.getElementById('counts').textContent = 'Số lượt chơi: ' + count;
             } else {
-		if (guess > luckyNumber){
+		    if (guess > luckyNumber){
                    alert('Số cần tìm NHỎ HƠN số dự đoán');
             	} else if (guess < luckyNumber){
                    alert('Số cần tìm LỚN HƠN số dự đoán');
@@ -48,7 +52,8 @@
             	   alert('Bạn đã đoán đúng');
                    document.getElementById('header').textContent = 'Bạn đã thắng. Số may mắn là: ' + luckyNumber;
             	}
-	    }        }
+	        }        
+        }
 
         function restartGame(){
             count = document.getElementById('counts').value;
