@@ -36,20 +36,19 @@
             count--;
             document.getElementById('counts').textContent = "Số lượt chơi: " + count;
 
-            if (guess > luckyNumber){
-                alert('Số cần tìm NHỎ HƠN số dự đoán');
-            } else if (guess < luckyNumber){
-                alert('Số cần tìm LỚN HƠN số dự đoán');
-            } else {
-                alert('Bạn đã đoán đúng');
-                document.getElementById('header').textContent = 'Bạn đã thắng. Số may mắn là: ' + luckyNumber;
-            }
-
             if (count == 0){
                 alert('Bạn đã hết lượt');
                 document.getElementById('header').textContent = 'Bạn đã thua. Số may mắn là: ' + luckyNumber;
-            }
-        }
+            } else {
+		if (guess > luckyNumber){
+                   alert('Số cần tìm NHỎ HƠN số dự đoán');
+            	} else if (guess < luckyNumber){
+                   alert('Số cần tìm LỚN HƠN số dự đoán');
+            	} else {
+            	   alert('Bạn đã đoán đúng');
+                   document.getElementById('header').textContent = 'Bạn đã thắng. Số may mắn là: ' + luckyNumber;
+            	}
+	    }        }
 
         function restartGame(){
             count = document.getElementById('counts').value;
