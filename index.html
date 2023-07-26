@@ -16,21 +16,23 @@
     <p> Nhập số dự đoán: </p>
     <input type="number"    id="guessNumber"><br>
     <button onclick="checkNumber()">Đoán</button>
+    <button onclick="restartGame()" id="btnRestart">Chơi lại</button>
+
 </body>
 
     <script>
-        const luckyNumber = Math.floor(Math.random() * 100) + 1;
-        var count = 0;
+        let luckyNumber = Math.floor(Math.random() * 100) + 1;
+        var count = 5;
 
         function checkNumber(){
-            const guess = parseInt(document.getElementById("guessNumber").value);
+            let guess = parseInt(document.getElementById("guessNumber").value);
 
             if (isNaN(guess)){
                 alert('Vui lòng nhập 1 số.');
                 return;
             } 
 
-            count++;
+            count--;
 
             if (guess < luckyNumber){
                 alert('Số cần tìm LỚN HƠN số dự đoán.');
@@ -39,12 +41,22 @@
             } else {
                 alert('Bạn đã đoán đúng');
             }
+            if (count == 0){
+                alert('Bạn đã hết lượt');
+            }
         }
 
         function restartGame(){
-            count = 0;
-            luckyNumber = Math.floor(Math.random() *100) + 1 ;
+            count = 5;
+            luckyNumber = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("guessNumber").value = "";
         }
+
+        document.getElementById("btnRestart").addEventListener("click", function() {
+            alert('Chơi lại game !');
+            restartGame(); 
+        });
+
     </script>
 
 </html>
