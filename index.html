@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-    <h1>Đoán số may mắn</h1>
+    <h1 id="header">Đoán số may mắn</h1>
     <p id="counts">Số lượt chơi: 5</p>
     <p> Nhập số dự đoán: </p>
     <input type="number"    id="guessNumber"><br>
@@ -36,14 +36,18 @@
             count--;
             document.getElementById('counts').textContent = "Số lượt chơi: " + count;
 
-            if (guess != luckyNumber){
-                alert('Bạn đã đoán sai')
+            if (guess > luckyNumber){
+                alert('Số cần tìm NHỎ HƠN số dự đoán');
+            } else if (guess < luckyNumber){
+                alert('Số cần tìm LỚN HƠN số dự đoán');
             } else {
                 alert('Bạn đã đoán đúng');
+                document.getElementById('header').textContent = 'Bạn đã thắng. Số may mắn là: ' + luckyNumber;
             }
 
             if (count == 0){
                 alert('Bạn đã hết lượt');
+                document.getElementById('header').textContent = 'Bạn đã thua. Số may mắn là: ' + luckyNumber;
             }
         }
 
@@ -58,6 +62,7 @@
             restartGame(); 
             count = 5;
             document.getElementById('counts').textContent = 'Số lượt chơi: ' + count;
+            document.getElementById('header').textContent = "Đoán số may mắn";
         });
 
     </script>
