@@ -34,13 +34,12 @@
 
             count--;
 
-            if (guess < luckyNumber){
-                alert('Số cần tìm LỚN HƠN số dự đoán.');
-            } else if (guess > luckyNumber) {
-                alert('Số cần tìm NHỎ HƠN số dự đoán.');
+            if (guess != luckyNumber){
+                alert('Bạn đã đoán sai')
             } else {
                 alert('Bạn đã đoán đúng');
             }
+
             if (count == 0){
                 alert('Bạn đã hết lượt');
             }
