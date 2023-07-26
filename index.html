@@ -13,6 +13,7 @@
 </head>
 <body>
     <h1 id="header">Đoán số may mắn</h1>
+    <h1 id="header1"></h1>
     <p id="counts">Số lượt chơi: 5</p>
     <p> Nhập số dự đoán: </p>
     <input type="number"    id="guessNumber"><br>
@@ -38,7 +39,8 @@
 
             if (count == 0){
                 alert('Bạn đã hết lượt');
-                document.getElementById('header').textContent = 'Bạn đã thua. Số may mắn là: ' + luckyNumber;
+                document.getElementById('header').textContent = 'Bạn đã thắng.';
+                document.getElementById('header1').textContent = 'Số may mắn là: ' + luckyNumber;
             } else if (count < 0){
                 alert('Bạn đã hết lượt');
                 count = 0;
@@ -50,7 +52,8 @@
                    alert('Số cần tìm LỚN HƠN số dự đoán');
             	} else {
             	   alert('Bạn đã đoán đúng');
-                   document.getElementById('header').textContent = 'Bạn đã thắng. Số may mắn là: ' + luckyNumber;
+                   document.getElementById('header').textContent = 'Bạn đã thắng.';
+                   document.getElementById('header1').textContent = 'Số may mắn là: ' + luckyNumber;
             	}
 	        }        
         }
