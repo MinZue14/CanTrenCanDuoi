@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Đoán số may mắn</h1>
+    <p> Nhập số dự đoán: </p>
+    <input type="number"    id="guessNumber"><br>
+    <button onclick="checkNumber()">Đoán</button>
+</body>
+
+    <script>
+        const luckyNumber = Math.floor(Math.random() * 100) + 1;
+        var count = 0;
+
+        function checkNumber(){
+            const guess = parseInt(document.getElementById("guessNumber").value);
+
+            if (isNaN(guess)){
+                alert('Vui lòng nhập 1 số.');
+                return;
+            } 
+
+            count++;
+
+            if (guess < luckyNumber){
+                alert('Số cần tìm LỚN HƠN số dự đoán.');
+            } else if (guess > luckyNumber) {
+                alert('Số cần tìm NHỎ HƠN số dự đoán.');
+            } else {
+                alert('Bạn đã đoán đúng');
+            }
+        }
+
+        function restartGame(){
+            count = 0;
+            luckyNumber = Math.floor(Math.random() *100) + 1 ;
+        }
+    </script>
+
+</html>
